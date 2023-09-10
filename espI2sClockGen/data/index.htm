@@ -4,7 +4,7 @@
 		<!--Import Google Icon Font-->
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Import materialize.css-->
-		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" media="screen,projection" />
+		<link rel="stylesheet" href="/materialize-purify.css" media="screen,projection" />
 
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
@@ -26,19 +26,19 @@
 				</div>
 				<div id = "clock" class = "tab col s12">
 					<div class="input-field col s6">
-					  <input value="31250" id="targetHz" type="text">
+					  <input value="31250" id="targetHz" type="text" inputmode="numeric">
 					  <label class="active" for="targetHz">Target Clock (Hz)</label>
 					</div>
 					<div class="input-field col s6">
-					  <input value="50" id="dutycycle" type="text">
+					  <input value="50" id="dutycycle" type="text" inputmode="numeric">
 					  <label class="active" for="dutycycle">Duty Cycle</label>
 					</div>
 					<div class="input-field col s6">
-					  <input value="0" id="tolerance" type="text">
+					  <input value="0" id="tolerance" type="text" inputmode="numeric">
 					  <label class="active" for="ckError">tolerance %</label>
 					</div>
 					<div class="input-field col s6">
-					  <input value="0" id="bitsPerWord" type="text">
+					  <input value="0" id="bitsPerWord" type="text" inputmode="numeric">
 					  <label class="active" for="bitsPerWord">bits per word</label>
 					</div>
 					<div class="input-field col s6">
@@ -52,43 +52,43 @@
 					<div class="header"><span>+ Advanced</span></div>
 					<div class="content">
 						<div class="input-field col s6">
-						  <input value="1000000" id="Hz" type="text">
+						  <input value="1000000" id="Hz" type="text" inputmode="numeric">
 						  <label class="active" for="Hz">Bit Clock (Hz)</label>
 						</div>
 						<div class="input-field col s6">
-						  <input value="0" id="oneshot" type="text">
+						  <input value="0" id="oneshot" type="text" inputmode="numeric">
 						  <label class="active" for="oneshot">One Shot</label>
 						</div>
 						<div class="input-field col s6">
-						  <input value="16" id="markbits" type="text">
+						  <input value="16" id="markbits" type="text" inputmode="numeric">
 						  <label class="active" for="markbits">Mark Bits</label>
 						</div>
 						<div class="input-field col s6">
-						  <input value="16" id="spacebits" type="text">
+						  <input value="16" id="spacebits" type="text" inputmode="numeric">
 						  <label class="active" for="spacebits">Space Bits</label>
 						</div>
 						<div class="input-field col s6">
-						  <input value="512" id="count32" type="text">
+						  <input value="512" id="count32" type="text" inputmode="numeric">
 						  <label class="active" for="count32">Buffer Size (32b words)</label>
 						</div>
 						<div class="input-field col s6">
-						  <input disabled value="32" id="tBits" type="text">
+						  <input disabled value="32" id="tBits" type="text" inputmode="numeric">
 						  <label class="active" for="tBits">Bits per Clock</label>
 						</div>
 						<div class="input-field col s6">
-						  <input value="40" id="div1" type="text">
+						  <input value="40" id="div1" type="text" inputmode="numeric">
 						  <label class="active" for="div1">div1</label>
 						</div>
 						<div class="input-field col s6">
-						  <input value="4" id="div2" type="text">
+						  <input value="4" id="div2" type="text" inputmode="numeric">
 						  <label class="active" for="div2">div2</label>
 						</div>
 						<div class="input-field col s6 offset-s6">
-						  <input value="0" id="wLength" type="text">
+						  <input value="0" id="wLength" type="text" inputmode="numeric">
 						  <label class="active" for="wLength">wLength Field</label>
 						</div>
 					</div>
-					<a class="btn green" id="setclock" style="width:240px;height:24px"> Generate Clock</a>&nbsp 
+					<a class="btn green" id="setclock" style="width:100%;;height:5%;"> Generate Clock</a>
 				</div>
 				<div id = "pulses" class = "tab col s12">
 					<h5>Pulse Files</h5>
@@ -105,10 +105,8 @@
 				line-height: 28px;
 			}
 			.awTitle {
-				display:inline-block;
+				text-align: center;
 				font-size: x-large;
-				padding-left:20px;
-				width:200px;
 			}
 			header {
 				position:absolute;
@@ -117,7 +115,7 @@
 				height:32px;
 				right:0px;
 				overflow:hidden;
-				background:red;
+				background:rgb(0, 76, 255);
 				color:white;
 			}
 			td {
@@ -126,11 +124,9 @@
 				padding:0px;
 			}
 			.container {
-				position:absolute;
+				position:relative;
 				top:32px;
 				bottom:0px;
-				left:10px;
-				right:60px;
 				overflow-y:auto;
 				overflow-x:hidden;
 			}
@@ -156,8 +152,8 @@
 		</style>
 	
 		<!--Import jQuery before materialize.js-->
-		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+		<script type="text/javascript" src="/jquery-2.1.1.min.js"></script>
+		<script src="/materialize.min.js"></script>
 		<script type="text/javascript">(function($){
 $(function(){
 	var host = window.location.hostname;
